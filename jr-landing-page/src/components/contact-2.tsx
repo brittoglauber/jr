@@ -121,6 +121,7 @@ export function Contact2() {
             backgroundImage: `url(${background})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            borderRadius: "8px",
             width: "760px",
             height: "560px",
           }}
@@ -128,7 +129,7 @@ export function Contact2() {
         >
           <div
             className="
-              flex flex-col items-start px-16 ml-[-70px] justify-center w-[448px] h-[348px] bg-[#24325D] text-white
+              flex flex-col items-start px-16 ml-[-70px] justify-center w-[448px] h-[348px] bg-[#24325D] text-white rounded-md
               max-[1560px]:ml-[-40px]
               max-[1480px]:ml-[0px]
             "
@@ -162,11 +163,15 @@ export function Contact2() {
             >
               <button
                 className="
-                    w-[208px] h-[60px] mt-6 rounded-sm bg-gradient-to-r from-red-800 to-red-950 
+                    w-[208px] h-[60px] mt-6 rounded-sm bg-gradient-to-r 
                     transition ease-in-out delay-150  hover:scale-105 duration-300
                         "
+                style={{
+                  background:
+                    "linear-gradient(90deg, #E6293F 0%, #801723 100%)",
+                }}
               >
-                Entrar em contato
+                Entrar em Contato
               </button>
             </a>
           </div>
@@ -174,7 +179,7 @@ export function Contact2() {
 
         <div
           className="
-                        flex flex-col items-start px-5 ml-[-70px] justify-center 
+                        flex flex-col items-start px-5 ml-[-70px] justify-center rounded-md
                         w-[448px] h-[348px] bg-[#24325D] text-white
                         mt-7
                         min-[1260px]:hidden
@@ -208,11 +213,14 @@ export function Contact2() {
           <a href="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20estou%20interessado%20na%20vaga%20para%20motorista%20divulgada%20no%20site%20da%20empresa">
             <button
               className="
-                            w-[208px] h-[60px] mt-6 rounded-sm bg-[#E6293F]
-                            hover:bg-[#C9123F] transition duration-300
+                            w-[208px] h-[60px] mt-6 rounded-sm 
+                            transition duration-300
                         "
+              style={{
+                background: "linear-gradient(90deg, #E6293F 0%, #801723 100%)",
+              }}
             >
-              Entrar em contato
+              Entrar em Contato
             </button>
           </a>
         </div>

@@ -52,6 +52,7 @@ export function Banner() {
                 max-[1260px]:text-[34px]
                 max-[1260px]:hidden
                 max-[448px]:w-full
+                leading-tight	
             "
             >
               Soluções inteligentes e <br /> econômicas para quem vai <br />{" "}

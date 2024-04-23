@@ -7,7 +7,6 @@ const envSchema = z.object({
   PORT: z.number().default(3333),
   RESEND_API_KEY: z.string(),
   JR_EMAIL: z.string(),
-  JR_EMAIL_CURRICULO: z.string(),
 });
 
 const _env = envSchema.safeParse(process.env);

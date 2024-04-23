@@ -13,11 +13,10 @@ export function Card(cardProps: CardProps) {
         backgroundImage: `url(${imagePath})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        width: "auto",
-        height: "408px",
+        maxWidth: "329px",
+        height: "440px",
       }}
       className=" flex flex-col text-white pl-6 pb-4 rounded-xl justify-end 
-      
       "
     >
       <span className="text-xl">{cardProps.title}</span>

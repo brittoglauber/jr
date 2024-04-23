@@ -124,10 +124,11 @@ export function Carrosel() {
             />
           </div>
 
-          <div className="w-full mt-20">
+          <div className="w-full flex items-center justify-center mt-20">
             <Swiper
-              slidesPerView={2}
+              slidesPerView={3}
               spaceBetween={30}
+              centeredSlides={true}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -206,47 +207,51 @@ export function Carrosel() {
           </div>
         </div>
 
-        <div className="w-[89%] flex items-center justify-center mt-8">
-          <Swiper
-            slidesPerView={1}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            navigation={true}
-            modules={[Pagination, Navigation, Autoplay]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <Card
-                title={"Transporte Rodoviário"}
-                subTitle={"Contratos de Logística"}
-                imageName={"1.webp"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                title={"Máquinas Pesadas"}
-                subTitle={"Locação de Equipamentos"}
-                imageName={"2.webp"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                title={"Armazens & Distribuição"}
-                subTitle={"Locação de Galpões"}
-                imageName={"3.webp"}
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card
-                title={"Compra e Venda de Veículos"}
-                subTitle={"Cavalos e Implementos"}
-                imageName={"4.webp"}
-              />
-            </SwiperSlide>
-          </Swiper>
+        <div className="w-full flex items-center justify-center mt-8">
+          <div className="w-[329px]">
+            <Swiper
+              slidesPerView={"auto"}
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              width={329}
+              loop={true}
+              navigation={true}
+              modules={[Pagination, Navigation, Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide style={{ width: "90%" }}>
+                <Card
+                  title={"Transporte Rodoviário"}
+                  subTitle={"Contratos de Logística"}
+                  imageName={"1.webp"}
+                />
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "90%" }}>
+                <Card
+                  title={"Máquinas Pesadas"}
+                  subTitle={"Locação de Equipamentos"}
+                  imageName={"2.webp"}
+                />
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "90%" }}>
+                <Card
+                  title={"Armazens & Distribuição"}
+                  subTitle={"Locação de Galpões"}
+                  imageName={"3.webp"}
+                />
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "90%" }}>
+                <Card
+                  title={"Compra e Venda de Veículos"}
+                  subTitle={"Cavalos e Implementos"}
+                  imageName={"4.webp"}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
 
         <div className="text-base mt-6">

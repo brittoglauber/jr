@@ -4,7 +4,7 @@ import { Button } from "./button";
 
 export function SeccionContact() {
   return (
-    <div className="flex justify-center items-center w-full mt-5 ">
+    <div className="flex justify-center items-center w-full mt-[60px] ">
       <div
         className="
                 flex justify-between items-center w-full max-w-screen-2xl mb-[160px] gap-8

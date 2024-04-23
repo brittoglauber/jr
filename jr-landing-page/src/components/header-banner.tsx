@@ -28,12 +28,12 @@ export default function HeaderBanner() {
       >
         <div className="flex items-center justify-between w-full max-w-screen-2xl">
           <nav className="lg:space-x-6 text-white text-base font-semibold">
-            <NavLink to="/" className="pr-4 border-r-2">
+            <NavLink to="/" className="pr-4 border-r border-slate-500	">
               Início
             </NavLink>
             <HashLink
               to="#services"
-              className="pr-4 border-r-2"
+              className="pr-4 border-r border-slate-500	"
               smooth
               scroll={(el: any) => {
                 const yOffset = -100; // Adjust the offset to your liking
@@ -46,7 +46,7 @@ export default function HeaderBanner() {
             </HashLink>
             <HashLink
               to="#aboutUs"
-              className="pr-4 border-r-2"
+              className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
                 const yOffset = -100; // Adjust the offset to your liking
                 const y =
@@ -58,19 +58,19 @@ export default function HeaderBanner() {
             </HashLink>
             <HashLink
               to="#acting"
-              className="pr-4 border-r-2"
+              className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
-                const yOffset = -100; // Adjust the offset to your liking
+                const yOffset = -20; // Adjust the offset to your liking
                 const y =
                   el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: "smooth" });
+                window.scrollTo({ top: y, behavior: "auto" });
               }}
             >
               Atuação
             </HashLink>
             <HashLink
               to="#work"
-              className="pr-4 border-r-2"
+              className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
                 const yOffset = 0; // Adjust the offset to your liking
                 const y =
@@ -82,7 +82,7 @@ export default function HeaderBanner() {
             </HashLink>
             <HashLink
               to="#contact"
-              className="pr-4 border-r-2"
+              className="pr-4"
               scroll={(el: any) => {
                 const yOffset = -100; // Adjust the offset to your liking
                 const y =

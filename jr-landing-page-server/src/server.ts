@@ -10,7 +10,7 @@ const app = fastify();
 const resend = new Resend(env.RESEND_API_KEY);
 
 app.register(cors, {
-  origin: "http://localhost:5173", // Replace with your frontend origin
+  origin: "http://localhost:3030", // Replace with your frontend origin
   credentials: true, // Enable credentials
 });
 
@@ -33,9 +33,9 @@ app.post("/cotacao", async (request, reply) => {
 
   resend.emails
     .send({
-      from: email,
+      from: "onboarding@resend.dev",
       to: env.JR_EMAIL,
-      subject: "Formulário de Cotação",
+      subject: "Formulário de Cotação - Site JR Express",
       html:
         "<p>Uma nova solicitação de cotação foi registrada no site da JR Express.</p> <p>Confira os detalhes abaixo:</p> <p>Nome: " +
         name +
@@ -56,24 +56,6 @@ app.post("/cotacao", async (request, reply) => {
     });
 
   return reply.status(200).send();
-});
-
-app.post("/curriculo", async (request, reply) => {
-  resend.emails
-    .send({
-      from: "",
-      to: env.JR_EMAIL_CURRICULO,
-      subject: "Envio de Currículo",
-      html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-      attachments: [
-        {
-          filename: "curriculo.pdf",
-        },
-      ],
-    })
-    .then(() => {
-      console.log("Email sent!");
-    });
 });
 
 app

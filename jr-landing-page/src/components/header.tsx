@@ -2,6 +2,7 @@ import logo from "../assets/jr-logo.png";
 import icon1 from "../assets/relogio-icon.svg";
 import icon2 from "../assets/email-icon.svg";
 import icon3 from "../assets/phone-icon.svg";
+import { Link } from "react-router-dom";
 
 export function Header() {
   return (
@@ -22,9 +23,9 @@ export function Header() {
                     max-[430px]:mb-5
                     "
       >
-        <div>
+        <Link to="/">
           <img src={logo} width={220} height={47} alt="Logo jr" />
-        </div>
+        </Link>
 
         <div className="flex max-[1260px]:hidden font-medium">
           <div className="flex items-center">
