@@ -1,17 +1,15 @@
 import { IconOutlet } from "./icon-outlet";
-
+import svg1 from "../assets/clarity_truck-solid.svg";
+import svg2 from "../assets/mdi_security.svg";
+import svg3 from "../assets/mingcute_check-2-line.svg";
+import svg4 from "../assets/akar-icons_check-in.svg";
+import svg5 from "../assets/oui_package.svg";
 export function Outlet() {
-  const svg1 = "/src/assets/clarity_truck-solid.svg";
-  const svg2 = "/src/assets/mdi_security.svg";
-  const svg3 = "/src/assets/mingcute_check-2-line.svg";
-  const svg4 = "/src/assets/akar-icons_check-in.svg";
-  const svg5 = "/src/assets/oui_package.svg";
-
   return (
     <>
       <div
         className="
-            flex justify-center mb-32 w-full h-64 
+            flex justify-center  mb-32 w-full h-64 
             max-[1260px]:hidden
         "
         style={{
@@ -20,7 +18,7 @@ export function Outlet() {
             "linear-gradient(94deg, #22325D -1.21%, #22325D 58.66%, #E6293F 116.84%)",
         }}
       >
-        <div className="w-full flex justify-between items-center  max-w-screen-2xl   text-white">
+        <div className="w-full flex justify-between items-center  max-w-screen-2xl text-white px-5">
           <IconOutlet
             title="Frota Própria"
             subTitle="Diversos implementos"
@@ -60,14 +58,14 @@ export function Outlet() {
 
       <div
         className="
-          flex justify-center mb-32 w-full h-[650px] bg-[#23335E] mt-[72px]
+          flex justify-center items-center mb-32 w-full h-[650px] bg-[#23335E] mt-[72px]
           min-[1260px]:hidden
         "
         style={{
           fontFamily: "Krub, sans-serif",
         }}
       >
-        <div className="flex flex-col justify-center items-start w-8/12 max-w-[250px] gap-10 text-white">
+        <div className="flex flex-col justify-center items-start  gap-10 text-white">
           <IconOutlet
             title="Frota Própria"
             subTitle="Diversos implementos"

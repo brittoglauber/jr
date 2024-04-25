@@ -4,25 +4,26 @@ import { Button } from "./button";
 
 export function SeccionContact() {
   return (
-    <div className="flex justify-center items-center w-full mt-[60px] ">
+    <div className="flex justify-center items-center w-full mt-[64px] ">
       <div
         className="
                 flex justify-between items-center w-full max-w-screen-2xl mb-[160px] gap-8
                 max-[1260px]:flex-col
+                max-[1260px]:gap-0
                 max-[1260px]:px-[20px]
                 max-[1260px]:mb-[72px] 
             "
       >
-        <div>
+        <div className="w-full">
           <img src={background} className="w-full h-auto max-[720px]:hidden" />
         </div>
 
-        <img src={background2} className="w-full h-auto min-[431px]:hidden" />
+        <img src={background2} className="w-full h-auto min-[721px]:hidden" />
 
         <div
           className="
                     
-                    max-[1260px]:mt-12  
+                    max-[1260px]:mt-10  
                 "
         >
           <div>

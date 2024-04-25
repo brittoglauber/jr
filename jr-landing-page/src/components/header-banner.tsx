@@ -20,19 +20,19 @@ export default function HeaderBanner() {
   return (
     <>
       <div
-        className="flex justify-center w-full h-[78px] max-[1260px]:hidden"
+        className="flex justify-center w-full h-[78px] max-[1164px]:hidden"
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.3)",
           fontFamily: "Krub, sans-serif",
         }}
       >
-        <div className="flex items-center justify-between w-full max-w-screen-2xl">
+        <div className="flex items-center justify-between w-full max-w-screen-2xl px-5">
           <nav className="lg:space-x-6 text-white text-base font-semibold">
             <NavLink to="/" className="pr-4 border-r border-slate-500	">
               Início
             </NavLink>
             <HashLink
-              to="#services"
+              to="/#services"
               className="pr-4 border-r border-slate-500	"
               smooth
               scroll={(el: any) => {
@@ -45,7 +45,7 @@ export default function HeaderBanner() {
               Serviços
             </HashLink>
             <HashLink
-              to="#aboutUs"
+              to="/#aboutUs"
               className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
                 const yOffset = -100; // Adjust the offset to your liking
@@ -57,7 +57,7 @@ export default function HeaderBanner() {
               Sobre Nós
             </HashLink>
             <HashLink
-              to="#acting"
+              to="/#acting"
               className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
                 const yOffset = -20; // Adjust the offset to your liking
@@ -69,7 +69,7 @@ export default function HeaderBanner() {
               Atuação
             </HashLink>
             <HashLink
-              to="#work"
+              to="/#work"
               className="pr-4 border-r border-slate-500	"
               scroll={(el: any) => {
                 const yOffset = 0; // Adjust the offset to your liking
@@ -81,7 +81,7 @@ export default function HeaderBanner() {
               Trabalhe Conosco
             </HashLink>
             <HashLink
-              to="#contact"
+              to="/#contact"
               className="pr-4"
               scroll={(el: any) => {
                 const yOffset = -100; // Adjust the offset to your liking
@@ -95,7 +95,7 @@ export default function HeaderBanner() {
           </nav>
 
           <div className="flex">
-            <div className="flex items-center gap-6 mr-[40px] max-[1420px]:hidden ">
+            <div className="flex items-center gap-6 mr-[40px] max-[1420px]:hidden">
               <NavLink
                 to="https://www.instagram.com/jrexpresstransportes/"
                 target="_blank"
@@ -136,7 +136,7 @@ export default function HeaderBanner() {
 
       <div
         className="flex justify-center w-full h-[128px] 
-                min-[1260px]:hidden px-5 py-3"
+                min-[1165px]:hidden px-5 py-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
       >
         <div

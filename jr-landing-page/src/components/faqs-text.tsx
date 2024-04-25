@@ -1,7 +1,7 @@
 export default function FaqsText() {
   return (
     <div className="w-full flex justify-center items-center mb-[152px]">
-      <div className="flex flex-col items-start justify-between w-11/12 max-w-screen-2xl">
+      <div className="flex flex-col items-start justify-between max-w-[1194px] text-justify">
         <div className="w-full mt-16 text-4xl font-semibold text-center">
           Políticas de Privacidade
         </div>

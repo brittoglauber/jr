@@ -7,12 +7,7 @@ interface InformationCardProps {
 
 export function InformationCard(props: InformationCardProps) {
   return (
-    <div
-      className="
-        min-w-[280px] 
-        max-[620px]:mt-8
-      "
-    >
+    <div className="min-w-[280px] ">
       <img src={props.imagePath} alt={props.alt} />
       <div className="text-2xl mt-3">{props.title}</div>
       <div

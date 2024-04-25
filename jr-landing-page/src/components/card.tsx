@@ -1,16 +1,14 @@
 interface CardProps {
   title: string;
   subTitle: string;
-  imageName: string;
+  srcName: string;
 }
 
 export function Card(cardProps: CardProps) {
-  const imagePath = `/src/assets/${cardProps.imageName}`;
-
   return (
     <div
       style={{
-        backgroundImage: `url(${imagePath})`,
+        backgroundImage: `url(${cardProps.srcName})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         maxWidth: "329px",

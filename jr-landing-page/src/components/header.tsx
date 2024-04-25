@@ -1,4 +1,4 @@
-import logo from "../assets/jr-logo.png";
+import logo from "../assets/jr-logo.svg";
 import icon1 from "../assets/relogio-icon.svg";
 import icon2 from "../assets/email-icon.svg";
 import icon3 from "../assets/phone-icon.svg";
@@ -8,8 +8,8 @@ export function Header() {
   return (
     <div
       className="
-        w-full h-32 flex justify-center items-center
-        max-[430px]:h-[87px]
+        w-full h-32 flex justify-center items-center 
+        max-[1260px]:h-[87px]
       "
       style={{
         fontFamily: "Krub, sans-serif",
@@ -17,7 +17,7 @@ export function Header() {
     >
       <div
         className="
-                    flex h-16 items-center justify-between gap-6 w-full max-w-screen-2xl text-sm 
+                    flex h-16 items-center justify-between gap-6 w-full max-w-screen-2xl text-sm px-5
                     max-[1260px]:justify-center
                     max-[430px]:mt-5
                     max-[430px]:mb-5
@@ -27,7 +27,7 @@ export function Header() {
           <img src={logo} width={220} height={47} alt="Logo jr" />
         </Link>
 
-        <div className="flex max-[1260px]:hidden font-medium">
+        <div className="flex max-[1260px]:hidden font-medium ">
           <div className="flex items-center">
             <img src={icon1} width={63} height={63} alt="" />
             <div className="flex flex-col ml-4">
