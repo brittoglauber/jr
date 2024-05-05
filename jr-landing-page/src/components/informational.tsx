@@ -8,8 +8,21 @@ import icon4 from "../assets/Capa_1.svg";
 import icon5 from "../assets/Layer_1.svg";
 import icon6 from "../assets/Capa_11.svg";
 import icon7 from "../assets/Capa_1 (1).svg";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export function Informational() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
     <div
       className="
@@ -21,7 +34,7 @@ export function Informational() {
     >
       {/* DESKTOP */}
       <div className="max-[1260px]:hidden">
-        <div className="flex flex-col items-center w-full max-w-screen-2xl">
+        <div className="flex flex-col items-center w-full max-w-screen-2xl px-5">
           <div
             className="
             text-sm  px-[9px] py-[3px] bg-[#E8E8E8] 
@@ -44,13 +57,14 @@ export function Informational() {
           </span>
 
           <div
-            className="
-                        flex justify-between mt-[55px] h-[203px] gap-[88px] w-full max-w-screen-2xl px-5
-                        max-[1260px]:hidden
-                        max-[1620px]:gap-[5px] 
-                        max-[430px]:w-full
-          
-                    "
+            ref={ref}
+            className={`
+              flex justify-between mt-[55px] h-[203px] gap-[88px] w-full max-w-screen-2xl px-5
+              max-[1260px]:hidden
+              max-[1620px]:gap-[5px] 
+              max-[430px]:w-full
+              ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}
+            `}
           >
             <InformationCard
               title="Minérios"
@@ -82,17 +96,12 @@ export function Informational() {
           </div>
 
           <div
-            className="
-                    flex justify-center mt-[55px] mb-[80px] h-[203px] gap-[88px] w-6/12 max-w-screen-2xl
-                    max-[1620px]:gap-[5px]  
-                    max-[1620px]:w-8/12
-                    max-[1260px]:hidden 
-                    max-[1260px]:flex-col  
-                    max-[1260px]:h-[840px]  
-                    max-[1260px]:w-10/12  
-                    max-[1260px]:mt-[32px]  
-                    max-[1260px]:gap-[32px]
-                "
+            className={`
+              flex justify-center mt-[55px] mb-[80px] h-[203px] gap-[88px] w-full max-w-[1085px]
+              max-[1620px]:gap-[20px]  
+              max-[1620px]:w-9/12
+              ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}
+            `}
           >
             <InformationCard
               title="Brita e Areia"
@@ -153,8 +162,11 @@ export function Informational() {
           </span>
 
           <div
-            className="
-            grid grid-cols-2  mt-6 h-[400px] gap-[32px] w-full max-w-screen-2xl"
+            ref={ref}
+            className={`
+              grid grid-cols-2  mt-6 h-[400px] gap-[32px] w-full max-w-screen-2xl
+              ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}
+            `}
           >
             <InformationCard
               title="Minérios"
@@ -186,10 +198,10 @@ export function Informational() {
           </div>
 
           <div
-            className="
-                    grid grid-cols-2 mt-[32px] mb-[80px] h-[420px] gap-[32px] w-full max-w-screen-2xl
-                    
-                "
+            className={`
+              grid grid-cols-2 mt-[32px] mb-[80px] h-[420px] gap-[32px] w-full max-w-screen-2xl
+              ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}
+            `}
           >
             <InformationCard
               title="Brita e Areia"
@@ -237,7 +249,10 @@ export function Informational() {
             Veja os materiais que nós transportamos
           </span>
 
-          <div className="flex flex-col  mt-6 gap-[32px]">
+          <div
+            ref={ref}
+            className={`flex flex-col  mt-6 gap-[32px] ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+          >
             <InformationCard
               title="Minérios"
               description="Transportamos os principais minérios, sempre garantindo o abastecimento das indústrias."
@@ -287,7 +302,7 @@ export function Informational() {
               alt="Bebidas"
             />
 
-            <div className="mt-[32px]">
+            <div className="flex justify-center mt-[32px] mb-16 ">
               <Button
                 text="Solicitar Cotação"
                 link="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20vim%20através%20do%20site%20da%20JR%20e%20gostaria%20de%20solicitar%20uma%20cotação "

@@ -15,19 +15,33 @@ import photo1 from "../assets/1.webp";
 import photo2 from "../assets/2.webp";
 import photo3 from "../assets/3.webp";
 import photo4 from "../assets/4.webp";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export function Carrosel() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
-    <>
+    <div ref={ref} id="services">
       {/* DESKTOP VERSION */}
       <div
         className="
-          h-[408px] w-full flex items-center justify-center mt-[232px] mb-24 
+          h-[408px] w-full flex items-center justify-center mt-[160px] mb-24 
           max-[1440px]:hidden
         "
-        id="services"
       >
-        <div className="w-full max-w-screen-2xl flex items-center max justify-between px-5">
+        <div
+          className={`w-full max-w-screen-2xl flex items-center max justify-between px-5 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+        >
           <div className="w-[30%]">
             <span
               className="text-sm px-[9px] py-[3px] bg-[#E8E8E8]"
@@ -53,7 +67,7 @@ export function Carrosel() {
             </div>
           </div>
 
-          <div className="w-[70%]">
+          <div className={`w-[70%] animate-fade-up `}>
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={20}
@@ -106,7 +120,6 @@ export function Carrosel() {
           min-[1441px]:hidden
           max-[1120px]:hidden
         "
-        id="services"
       >
         <div className="w-full flex items-center justify-between max-w-screen-2xl">
           <div className="w-[40%] pl-5">
@@ -134,7 +147,9 @@ export function Carrosel() {
             </div>
           </div>
 
-          <div className="w-[60%]">
+          <div
+            className={`w-[60%] ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+          >
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={10}
@@ -208,15 +223,17 @@ export function Carrosel() {
           </div>
         </div>
 
-        <div className="w-full flex items-center justify-center mt-8 ">
+        <div
+          className={`w-full flex items-center justify-center mt-8 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+        >
           <div className="w-full pl-5">
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={15}
-              // autoplay={{
-              //   delay: 2500,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               loop={true}
               modules={[Autoplay]}
               className="mySwiper"
@@ -261,17 +278,18 @@ export function Carrosel() {
         </div>
       </div>
 
-      {/* MOBILE VERSION */}
+      {/* MOBILE VERSION - 2 */}
       <div
         className=" 
-          w-full flex flex-col items-center mt-20 
+          w-full flex flex-col items-center mt-20
           min-[461px]:hidden 
         "
       >
         <div
           className="
             w-full flex flex-col justify-center items-center mt-[75px]
-            max-[345px]:mt-[170px]
+            max-[360px]:mt-[100px]
+            max-[348px]:mt-[170px]
           "
         >
           <span
@@ -297,7 +315,9 @@ export function Carrosel() {
         </div>
 
         <div className="w-full flex items-center justify-center mt-8 ">
-          <div className="w-[100%] pl-[20px]">
+          <div
+            className={`w-[100%] pl-[20px] ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+          >
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={10}
@@ -348,6 +368,6 @@ export function Carrosel() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

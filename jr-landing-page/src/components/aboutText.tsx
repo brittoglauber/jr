@@ -1,11 +1,17 @@
 export default function AboutText() {
   return (
     <div className="w-full flex justify-center items-center mb-[152px]">
-      <div className="flex flex-col items-start justify-between max-w-[1194px] text-justify">
-        <div className="w-full mt-16 text-4xl font-semibold text-center">
+      <div className="flex flex-col items-start justify-between max-w-[1194px] text-justify max-[1260px]:px-5">
+        <div
+          className="
+            w-full mt-16 text-4xl font-semibold text-center
+            max-[430px]:text-2xl
+            max-[430px]:mt-10
+          "
+        >
           Termos e Condições de Uso
         </div>
-        <p className="mt-12 text-[#666C89] text-base font-medium">
+        <p className="mt-12 text-[#666C89] text-base font-medium max-[430px]:mt-8">
           Seja bem-vindo ao Transportadora JR Express!
         </p>
 

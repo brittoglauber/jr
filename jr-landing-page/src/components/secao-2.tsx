@@ -7,18 +7,31 @@ import icon1 from "../assets/Capa_111.svg";
 import icon2 from "../assets/Layer_11.svg";
 import icon3 from "../assets/Frame1.svg";
 import icon4 from "../assets/Line.svg";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export function Secao2() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
-    <div className="flex flex-col items-center mb-[72px]" id="work">
+    <div ref={ref} className="flex flex-col items-center  mb-[72px]" id="work">
       <img src={background} className="w-full h-auto max-[520px]:hidden" />
 
       <img src={background2} className="w-full h-auto min-[521px]:hidden" />
 
       {/* DESKTOP */}
-      <div className="max-[1260px]:hidden">
+      <div className="w-full flex items-center justify-center max-[1260px]:hidden">
         <div
-          className="flex justify-between mt-[-100px] h-[600px] w-full bg-white  max-w-screen-2xl gap-5"
+          className="flex justify-between mt-[-100px] h-[600px] w-full bg-white  max-w-screen-2xl gap-5 px-5"
           style={{
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",
           }}
@@ -33,13 +46,7 @@ export function Secao2() {
             >
               Trabalhe Conosco
             </span>
-            <div
-              className="
-              text-4xl font-bold mt-3 
-              max-[430px]:text-[24px]  
-              max-[430px]:leading-tight	  
-            "
-            >
+            <div className="text-4xl font-bold mt-3">
               Se torne um motorista na JR Express
             </div>
             <div
@@ -70,7 +77,9 @@ export function Secao2() {
           </div>
 
           <div className="pr-[100px] pt-[100px] mb-10 flex flex-col gap-6">
-            <div className="flex w-[636px] h-[193px] gap-6">
+            <div
+              className={`flex w-[636px] h-[193px] gap-6 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
               <InformationCard
                 title="Salário da Categoria"
                 description="Oferecemos salários competitivos dentro da categoria, reconhecendo o valor e a do trabalho dos nossos motoristas."
@@ -85,7 +94,9 @@ export function Secao2() {
               />
             </div>
 
-            <div className="flex w-[636px] h-[193px] gap-6">
+            <div
+              className={`flex w-[636px] h-[193px] gap-6 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
               <InformationCard
                 title="Prêmios de Segurança"
                 description="Reconhecemos e premiamos financeiramente práticas seguras de condução, garantindo sua segurança e a de todos nas estradas."
@@ -152,7 +163,9 @@ export function Secao2() {
           </div>
 
           <div className="w-[100%] mb-10 flex flex-col px-5 ">
-            <div className="grid grid-cols-2 h-[210px] gap-5 w-full mt-10 ">
+            <div
+              className={`grid grid-cols-2 h-[210px] gap-5 w-full mt-10 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
               <InformationCard
                 title="Salário da Categoria"
                 description="Oferecemos salários competitivos dentro da categoria, reconhecendo o valor e a do trabalho dos nossos motoristas."
@@ -167,7 +180,9 @@ export function Secao2() {
               />
             </div>
 
-            <div className="grid grid-cols-2 h-[210px] gap-5 w-full mt-10">
+            <div
+              className={`grid grid-cols-2 h-[210px] gap-5 w-full mt-10 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
               <InformationCard
                 title="Prêmios de Segurança"
                 description="Reconhecemos e premiamos financeiramente práticas seguras de condução, garantindo sua segurança e a de todos nas estradas."
@@ -242,7 +257,9 @@ export function Secao2() {
             />
           </div>
 
-          <div className="flex flex-col gap-6 my-8">
+          <div
+            className={`flex flex-col gap-6 my-8 ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+          >
             <InformationCard
               title="Salário da Categoria"
               description="Oferecemos salários competitivos dentro da categoria, reconhecendo o valor e a do trabalho dos nossos motoristas."

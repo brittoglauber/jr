@@ -3,13 +3,29 @@ import background2 from "../assets/image-secao.webp";
 import icon1 from "../assets/atendimento-icon.svg";
 import icon2 from "../assets/rastreamento-icon.svg";
 import icon3 from "../assets/relogio-icon.svg";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export function Secao1() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
     <div className="flex items-center justify-center w-full mb-20" id="aboutUs">
       {/* DESKTOP */}
       <div className="max-[1280px]:hidden">
-        <div className="flex items-center justify-between px-[20px] max-w-screen-2xl">
+        <div
+          ref={ref}
+          className="flex items-center justify-between px-[20px] max-w-screen-2xl"
+        >
           <div className="w-[55%] ">
             <img src={background} className="w-full h-auto" />
           </div>
@@ -58,23 +74,30 @@ export function Secao1() {
               Entre em contato e faça um orçamento!
             </div>
 
-            <div className="flex items-center mt-10 animate-fade-up">
-              <img src={icon1} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3 ">
-                Atendimento 24/7
+            <div
+              ref={ref}
+              className={`${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
+              <div className="flex items-center mt-10 ">
+                <img src={icon1} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3 ">
+                  Atendimento 24/7
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon2} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">
-                Entregas Rastreadas
+              <div className={`flex items-center mt-5`}>
+                <img src={icon2} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Entregas Rastreadas
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon3} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">Fretes no Prazo</div>
+              <div className={`flex items-center mt-5`}>
+                <img src={icon3} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Fretes no Prazo
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -83,6 +106,7 @@ export function Secao1() {
       {/* TABLET */}
 
       <div
+        ref={ref}
         className="
           min-[1281px]:hidden 
           max-[780px]:hidden"
@@ -136,23 +160,29 @@ export function Secao1() {
               Entre em contato e faça um orçamento!
             </div>
 
-            <div className="flex items-center mt-10 animate-fade-up">
-              <img src={icon1} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3 ">
-                Atendimento 24/7
+            <div
+              className={`${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
+              <div className={`flex items-center mt-10`}>
+                <img src={icon1} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3 ">
+                  Atendimento 24/7
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon2} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">
-                Entregas Rastreadas
+              <div className={`flex items-center mt-5`}>
+                <img src={icon2} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Entregas Rastreadas
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon3} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">Fretes no Prazo</div>
+              <div className={`flex items-center mt-5`}>
+                <img src={icon3} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Fretes no Prazo
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -225,23 +255,30 @@ export function Secao1() {
               Entre em contato e faça um orçamento!
             </div>
 
-            <div className="flex items-center mt-10 animate-fade-up">
-              <img src={icon1} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3 ">
-                Atendimento 24/7
+            <div
+              ref={ref}
+              className={`${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+            >
+              <div className={`flex items-center mt-10`}>
+                <img src={icon1} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3 ">
+                  Atendimento 24/7
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon2} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">
-                Entregas Rastreadas
+              <div className={`flex items-center mt-5`}>
+                <img src={icon2} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Entregas Rastreadas
+                </div>
               </div>
-            </div>
 
-            <div className="flex items-center mt-5 animate-fade-up">
-              <img src={icon3} width={63} height={63} alt="" />
-              <div className="flex flex-col text-xl ml-3">Fretes no Prazo</div>
+              <div className={`flex items-center mt-5`}>
+                <img src={icon3} width={63} height={63} alt="" />
+                <div className="flex flex-col text-xl ml-3">
+                  Fretes no Prazo
+                </div>
+              </div>
             </div>
           </div>
         </div>

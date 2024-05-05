@@ -17,7 +17,7 @@ export function Header() {
     >
       <div
         className="
-                    flex h-16 items-center justify-between gap-6 w-full max-w-screen-2xl text-sm px-5
+                    flex h-16 items-center justify-between gap-6 w-full animate-fade-up max-w-screen-2xl text-sm px-5
                     max-[1260px]:justify-center
                     max-[430px]:mt-5
                     max-[430px]:mb-5
@@ -28,7 +28,7 @@ export function Header() {
         </Link>
 
         <div className="flex max-[1260px]:hidden font-medium ">
-          <div className="flex items-center">
+          <div className="flex items-center animate-fade-up">
             <img src={icon1} width={63} height={63} alt="" />
             <div className="flex flex-col ml-4">
               <span>Horário:</span>
@@ -36,7 +36,7 @@ export function Header() {
             </div>
           </div>
 
-          <div className="flex items-center ml-6">
+          <div className="flex items-center ml-6 animate-fade-up">
             <img src={icon2} width={63} height={63} alt="" />
             <div className="flex flex-col ml-4">
               <span>Email:</span>
@@ -44,7 +44,7 @@ export function Header() {
             </div>
           </div>
 
-          <div className="flex items-center ml-6">
+          <div className="flex items-center ml-6 animate-fade-up">
             <img src={icon3} width={63} height={63} alt="" />
             <div className="flex flex-col ml-4">
               <span>Telefones:</span>

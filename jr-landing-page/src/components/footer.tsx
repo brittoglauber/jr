@@ -7,12 +7,26 @@ import circle2 from "../assets/phone-icon.svg";
 import localization from "../assets/localization.webp";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 export function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
     <>
       {/* Desktop */}
       <div
+        ref={ref}
         className="
             w-full flex flex-col justify-center items-center h-[536px] bg-[#22325D]
             max-[1400px]:hidden
@@ -171,16 +185,13 @@ export function Footer() {
               </HashLink>
             </div>
 
-            <div
-              style={{
-                backgroundImage: `url(${localization})`,
-                backgroundSize: "cover", // Adjust as needed (contain, auto, etc.)
-                backgroundPosition: "center", // Adjust as needed (top, bottom, left, right)
-                width: "460px", // Optional: Set a width for the banner
-                height: "242px", // Optional: Set a height for the banner,
-              }}
-              className="max-[560px]:hidden"
-            ></div>
+            <a
+              href="https://maps.app.goo.gl/aEeaZXWDZinZsxFC7"
+              target="_blank"
+              className={`max-[560px]:hidden  ${isVisible ? "animate-fade-up animate-duration-[2000ms] " : ""}`}
+            >
+              <img src={localization} width={460} height={242} />
+            </a>
           </div>
 
           <div
@@ -193,8 +204,8 @@ export function Footer() {
           >
             <div>Av. Cel. Santos, 955 - São Félix, Brumado - BA, 46107-324</div>
             <div>
-              <Link to="/faqs">Políticas de Privacidade | </Link>
-              <Link to="/about">Termos de Uso</Link>
+              <HashLink to="/faqs/#faqs">Políticas de Privacidade | </HashLink>
+              <HashLink to="/about/#about">Termos de Uso</HashLink>
             </div>
           </div>
         </div>
@@ -347,25 +358,18 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="w-full flex items-start mt-8 px-5">
-            <div
-              style={{
-                backgroundImage: `url(${localization})`,
-                backgroundSize: "cover", // Adjust as needed (contain, auto, etc.)
-                borderRadius: "8px",
-                backgroundPosition: "center", // Adjust as needed (top, bottom, left, right)
-                width: "340px", // Optional: Set a width for the banner
-                height: "242px", // Optional: Set a height for the banner,
-              }}
-              className="
-                  max-[1260px]:mt-8
-                  max-[560px]:hidden
-              "
-            ></div>
+          <div ref={ref} className="w-full flex items-start mt-8 px-5">
+            <a
+              href="https://maps.app.goo.gl/aEeaZXWDZinZsxFC7"
+              target="_blank"
+              className={`max-[1260px]:mt-8 max-[560px]:hidden ${isVisible ? "animate-fade-up animate-duration-[2000ms] " : ""}`}
+            >
+              <img src={localization} width={340} height={242} />
+            </a>
           </div>
 
           <div
-            className="w-full flex  mt-8 justify-between items-start px-5 mb-[24px]"
+            className="w-full flex  mt-8 justify-between items-start mx-5 mb-[24px]"
             style={{
               borderTop: "1px solid #fff",
             }}
@@ -374,8 +378,8 @@ export function Footer() {
               Av. Cel. Santos, 955 - São Félix, Brumado - BA, 46107-324
             </div>
             <div className="mt-6">
-              <Link to="/faqs">Políticas de Privacidade | </Link>
-              <Link to="/about">Termos de Uso</Link>
+              <HashLink to="/faqs/#faqs">Políticas de Privacidade | </HashLink>
+              <HashLink to="/about/#about">Termos de Uso</HashLink>
             </div>
           </div>
         </div>
@@ -528,17 +532,16 @@ export function Footer() {
                 Nossos Diferenciais
               </HashLink>
             </div>
-            <div
-              style={{
-                backgroundImage: `url(${localization})`,
-                backgroundSize: "cover", // Adjust as needed (contain, auto, etc.)
-                borderRadius: "8px",
-                backgroundPosition: "center", // Adjust as needed (top, bottom, left, right)
-                width: "370px", // Optional: Set a width for the banner
-                height: "242px", // Optional: Set a height for the banner,
-              }}
-              className="mt-8"
-            ></div>
+
+            <div>
+              <a
+                href="https://maps.app.goo.gl/aEeaZXWDZinZsxFC7"
+                target="_blank"
+                className={`mt-8 ${isVisible ? "animate-fade-up animate-duration-[2000ms] " : ""}`}
+              >
+                <img src={localization} width={370} height={242} />
+              </a>
+            </div>
           </div>
 
           <div
@@ -551,8 +554,8 @@ export function Footer() {
               Av. Cel. Santos, 955 - São Félix, Brumado - BA, 46107-324
             </div>
             <div className="mt-6">
-              <Link to="/faqs">Políticas de Privacidade | </Link>
-              <Link to="/about">Termos de Uso</Link>
+              <HashLink to="/faqs/#faqs">Políticas de Privacidade | </HashLink>
+              <HashLink to="/about/#about">Termos de Uso</HashLink>
             </div>
           </div>
         </div>
@@ -706,17 +709,14 @@ export function Footer() {
               </HashLink>
             </div>
 
-            <div
-              style={{
-                backgroundImage: `url(${localization})`,
-                borderRadius: "8px",
-                backgroundSize: "cover", // Adjust as needed (contain, auto, etc.)
-                backgroundPosition: "center", // Adjust as needed (top, bottom, left, right)
-                width: "100%", // Optional: Set a width for the banner
-                height: "242px", // Optional: Set a height for the banner,
-              }}
-              className="mt-8"
-            ></div>
+            <a
+              ref={ref}
+              href="https://maps.app.goo.gl/aEeaZXWDZinZsxFC7"
+              target="_blank"
+              className={`mt-8 ${isVisible ? "animate-fade-up animate-duration-[2000ms] " : ""}`}
+            >
+              <img src={localization} height={242} style={{ width: "100%" }} />
+            </a>
 
             <div
               className="flex flex-col w-full my-8 justify-center items-center "
@@ -728,8 +728,10 @@ export function Footer() {
                 Av. Cel. Santos, 955 - São Félix, Brumado - BA, 46107-324
               </div>
               <div className="mt-6">
-                <Link to="/faqs">Políticas de Privacidade | </Link>
-                <Link to="/about">Termos de Uso</Link>
+                <HashLink to="/faqs/#faqs">
+                  Políticas de Privacidade |{" "}
+                </HashLink>
+                <HashLink to="/about/#about">Termos de Uso</HashLink>
               </div>
             </div>
           </div>

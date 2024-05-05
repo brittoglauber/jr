@@ -1,5 +1,5 @@
 import background from "../assets/Background.webp";
-import { Button } from "./button";
+import AlertDialogComponent from "./alert-dialog";
 import Formulario from "./formulario";
 import HeaderBanner from "./header-banner";
 
@@ -24,8 +24,8 @@ export function Banner() {
       >
         <HeaderBanner />
 
-        <div className="flex justify-between w-full max-w-screen-2xl mt-[60px]  px-5">
-          <div className="text-white mt-10">
+        <div className="flex justify-between w-full max-w-screen-2xl mt-[60px] px-5">
+          <div className="text-white mt-10 ">
             <span
               style={{
                 padding: "5px",
@@ -60,10 +60,7 @@ export function Banner() {
               Entre em contato conosco para descobrir todas as nossas soluções!
             </div>
 
-            <Button
-              text="Entrar em Contato"
-              link="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20vim%20através%20do%20site%20da%20JR%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20empresa%20e%20seus%20serviços"
-            />
+            <AlertDialogComponent />
           </div>
           <div className="h-[650px] w-[460px] items-end bg-white rounded-md min-w-[459px]">
             <Formulario />
@@ -80,24 +77,32 @@ export function Banner() {
           width: "100%", // Optional: Set a width for the banner
           height: "780px", // Optional: Set a height for the banner,
         }}
-        className="flex flex-col items-center  min-[1025px]:hidden 
-        max-[768px]:hidden"
+        className="flex flex-col items-center 
+          min-[1025px]:hidden 
+          max-[768px]:hidden"
       >
         <HeaderBanner />
 
         <div className="flex justify-center mt-[10px] px-5">
-          <div className="text-white mt-10 w-[50%]">
-            <span
+          <div className="text-white mt-10 w-[50%] ">
+            <div
               style={{
-                padding: "5px",
-                backgroundColor: "#3B3F44",
                 borderLeft: "5px solid #E6293F",
-                minWidth: "350px",
+                backgroundColor: "#3B3F44",
+                marginRight: "80px",
+                paddingLeft: "10px",
               }}
-              className="max-[448px]:text-xs"
             >
-              Expertise em Logística, Mineração e Armazenamento
-            </span>
+              <span
+                style={{
+                  padding: "5px",
+                  minWidth: "350px",
+                }}
+                className="max-[448px]:text-xs"
+              >
+                Expertise em Logística, Mineração e Armazenamento
+              </span>
+            </div>
 
             <div className="text-[50px] leading-none font-bold mt-2 max-[448px]:w-full">
               Soluções inteligentes e econômicas para quem vai para todas as
@@ -108,13 +113,10 @@ export function Banner() {
               Entre em contato conosco para descobrir todas as nossas soluções!
             </div>
 
-            <Button
-              text="Entrar em Contato"
-              link="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20vim%20através%20do%20site%20da%20JR%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20empresa%20e%20seus%20serviços"
-            />
+            <AlertDialogComponent />
           </div>
 
-          <div className="w-[50%] mt-[20px] items-end bg-white rounded-md ">
+          <div className="w-6/12 mt-[20px] items-end bg-white rounded-md ">
             <Formulario />
           </div>
         </div>
@@ -148,10 +150,21 @@ export function Banner() {
                 borderLeft: "5px solid #E6293F",
                 minWidth: "350px",
               }}
-              className="max-[448px]:text-xs"
+              className="max-[351px]:hidden max-[448px]:text-xs"
             >
               Expertise em Logística, Mineração e Armazenamento
             </span>
+
+            <div
+              style={{
+                padding: "5px",
+                backgroundColor: "#3B3F44",
+                borderLeft: "5px solid #E6293F",
+              }}
+              className="min-[350px]:hidden text-xs w-[70%]"
+            >
+              Expertise em Logística, Mineração e Armazenamento
+            </div>
 
             <div className="text-[34px] leading-none	font-bold mt-2 max-[448px]:w-full">
               Soluções inteligentes e econômicas para quem vai para todas as
@@ -162,10 +175,7 @@ export function Banner() {
               Entre em contato conosco para descobrir todas as nossas soluções!
             </div>
 
-            <Button
-              text="Entrar em Contato"
-              link="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20vim%20através%20do%20site%20da%20JR%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20empresa%20e%20seus%20serviços"
-            />
+            <AlertDialogComponent />
           </div>
 
           <div className="w-[460px] mt-[48px] items-end bg-white rounded-md max-[490px]:w-11/12">

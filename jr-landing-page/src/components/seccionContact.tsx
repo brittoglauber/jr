@@ -1,31 +1,42 @@
 import background from "../assets/Photo.webp";
 import background2 from "../assets/Photo-2.webp";
-import { Button } from "./button";
+import { useState, useRef, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import AlertDialogComponent from "./alert-dialog";
 
 export function SeccionContact() {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView();
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (inView && !hasAnimated.current) {
+      setIsVisible(true);
+      hasAnimated.current = true;
+    }
+  }, [inView]);
+
   return (
-    <div className="flex justify-center items-center w-full mt-[64px] ">
+    <div
+      ref={ref}
+      className={`flex justify-center items-center w-full mt-[64px] ${isVisible ? "animate-fade-up animate-duration-[2000ms]" : ""}`}
+    >
       <div
         className="
-                flex justify-between items-center w-full max-w-screen-2xl mb-[160px] gap-8
+                flex justify-between items-center w-full max-w-screen-2xl mb-24 gap-8 px-5 
                 max-[1260px]:flex-col
                 max-[1260px]:gap-0
                 max-[1260px]:px-[20px]
                 max-[1260px]:mb-[72px] 
             "
       >
-        <div className="w-full">
+        <div className="w-full ">
           <img src={background} className="w-full h-auto max-[720px]:hidden" />
         </div>
 
         <img src={background2} className="w-full h-auto min-[721px]:hidden" />
 
-        <div
-          className="
-                    
-                    max-[1260px]:mt-10  
-                "
-        >
+        <div className="w-full max-[1260px]:mt-10 ">
           <div>
             <span
               className="text-sm  px-[9px] py-[3px] bg-[#E8E8E8] "
@@ -37,7 +48,7 @@ export function SeccionContact() {
             </span>
             <div
               className="
-              text-4xl full font-bold mt-3
+              text-4xl font-bold mt-3
               max-[430px]:text-[24px]  
               max-[430px]:mt-2   
               max-[430px]:leading-tight	  
@@ -73,10 +84,7 @@ export function SeccionContact() {
               contato conosco hoje mesmo para explorar as opções disponíveis.
             </div>
 
-            <Button
-              text="Entrar em contato"
-              link="https://api.whatsapp.com/send?phone=77999681306&text=Olá,%20vim%20através%20do%20site%20da%20JR%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20compra%20e%20venda%20de%20veículos "
-            />
+            <AlertDialogComponent />
           </div>
         </div>
       </div>

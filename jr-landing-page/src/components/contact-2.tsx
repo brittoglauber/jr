@@ -60,7 +60,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Certificações ISO
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Possuímos certificações ISO que garantem a qualidade e
                   segurança dos nossos serviços, demonstrando nosso compromisso
                   com os mais altos padrões do setor de transporte
@@ -71,7 +76,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Custo
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   O preço justo e competitivo de acordo aos parâmetros do
                   mercado.
                 </AccordionContent>
@@ -81,7 +91,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Confiabilidade
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Suas cargas serão entregues no prazo e em boas condições.
                 </AccordionContent>
               </AccordionItem>
@@ -90,7 +105,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Reputação
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Empresa atuando há mais de 40 anos no mercado rodoviário de
                   cargas.
                 </AccordionContent>
@@ -100,7 +120,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Cobertura
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Atuamos com os nossos serviços em todo o território nacional.
                 </AccordionContent>
               </AccordionItem>
@@ -218,7 +243,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Certificações ISO
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Possuímos certificações ISO que garantem a qualidade e
                   segurança dos nossos serviços, demonstrando nosso compromisso
                   com os mais altos padrões do setor de transporte
@@ -229,7 +259,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Custo
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   O preço justo e competitivo de acordo aos parâmetros do
                   mercado.
                 </AccordionContent>
@@ -239,7 +274,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Confiabilidade
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Suas cargas serão entregues no prazo e em boas condições.
                 </AccordionContent>
               </AccordionItem>
@@ -248,7 +288,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Reputação
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Empresa atuando há mais de 40 anos no mercado rodoviário de
                   cargas.
                 </AccordionContent>
@@ -258,7 +303,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Cobertura
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Atuamos com os nossos serviços em todo o território nacional.
                 </AccordionContent>
               </AccordionItem>
@@ -393,7 +443,7 @@ export function Contact2() {
             "
             >
               <AccordionItem value="item-1">
-                <AccordionTrigger className=" text-[#1C1F35] mt-1">
+                <AccordionTrigger className="text-start text-[#1C1F35] mt-1">
                   Motoristas treinados e capacitados
                 </AccordionTrigger>
                 <AccordionContent
@@ -413,7 +463,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Certificações ISO
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Possuímos certificações ISO que garantem a qualidade e
                   segurança dos nossos serviços, demonstrando nosso compromisso
                   com os mais altos padrões do setor de transporte
@@ -424,7 +479,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Custo
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   O preço justo e competitivo de acordo aos parâmetros do
                   mercado.
                 </AccordionContent>
@@ -434,7 +494,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Confiabilidade
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Suas cargas serão entregues no prazo e em boas condições.
                 </AccordionContent>
               </AccordionItem>
@@ -443,7 +508,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Reputação
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Empresa atuando há mais de 40 anos no mercado rodoviário de
                   cargas.
                 </AccordionContent>
@@ -453,7 +523,12 @@ export function Contact2() {
                 <AccordionTrigger className=" text-[#1C1F35] mt-1">
                   Cobertura
                 </AccordionTrigger>
-                <AccordionContent className="text-base font-medium  text-[#666C89] mt-4">
+                <AccordionContent
+                  className="text-base font-medium  text-[#666C89] mt-4"
+                  style={{
+                    fontFamily: "Krub, sans-serif",
+                  }}
+                >
                   Atuamos com os nossos serviços em todo o território nacional.
                 </AccordionContent>
               </AccordionItem>

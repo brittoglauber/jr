@@ -5,11 +5,11 @@ import HeaderBanner from "@/components/header-banner";
 
 export default function Sobre() {
   return (
-    <>
+    <div id="about">
       <Header />
       <HeaderBanner />
       <AboutText />
       <Footer />
-    </>
+    </div>
   );
 }
